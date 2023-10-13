@@ -13,14 +13,14 @@ export default function Content() {
     fetchData();
   }, []);
 
-  useEffect(() => {
+
     const handleInput = (e) => {
       console.log(e.target.value);
       setSearch(e.target.value);
       const result = searchCharacter(e.target.value);
       console.log(result);
     };
-  }, []);
+
 
   return (
     <div>
