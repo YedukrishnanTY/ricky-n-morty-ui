@@ -1,0 +1,51 @@
+
+
+.details {
+    font-family: "Montserrat";
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.details-card {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5em;
+    font-family: "Montserrat";
+    cursor: pointer;
+    margin: 10vh ;
+
+}
+
+.details-card :hover {
+    transform: scale(1.1);
+}
+
+.details-content {
+    display: flex;
+    justify-content: center;
+    border-radius: 9px;
+    background-color: aliceblue;
+    padding: 10px;
+    box-shadow: 0 8px 12px 8px rgba(199, 11, 11, 0.137);
+
+}
+
+.details-content :hover {
+    transform: none;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+}
+
+.list{
+    display: flex;
+    justify-content: center;
+    
+}
+

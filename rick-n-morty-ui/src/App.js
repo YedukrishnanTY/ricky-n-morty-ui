@@ -1,9 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import Header from './components/Header/Header';
+import "./App.css";
+import Footer from "./components/Footer/Footer";
+import { AuthContextProvider } from "./contexts/loginContext";
+import MainPage from "./components/Main Page/MainPage";
 function App() {
   return (
-    <Header />
+    <>
+
+      <AuthContextProvider>
+        <MainPage />
+      </AuthContextProvider>
+      <Footer />
+    </>
   );
 }
 
