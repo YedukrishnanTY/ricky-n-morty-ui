@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,500&display=swap');
 .App {
   text-align: center;
+}
+body{
+  background-color: rgb(0, 0, 0);
+  color: aliceblue;
+  font-family: "Montserrat";
+  
 }
 
 .App-logo {

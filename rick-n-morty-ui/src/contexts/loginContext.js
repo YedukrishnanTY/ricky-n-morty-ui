@@ -3,7 +3,8 @@ import {  createContext, useState } from "react";
 export const AuthContext = createContext({
   authenticator: false,
   handleLogin: () => {},
-  alertBox : ""
+  alertBox : "",
+  setAuthenticator : ""
 });
 
 export const AuthContextProvider = ({ children }) => {
