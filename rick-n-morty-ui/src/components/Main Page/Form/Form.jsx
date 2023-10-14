@@ -1,7 +1,7 @@
 import React, { useCallback, useContext, useState } from "react";
 import { AuthContext } from "../../../contexts/loginContext";
 
-export default function Form({  }) {
+export default function Form() {
   const user = useContext(AuthContext);
 
   const [email, setEmail] = useState("");

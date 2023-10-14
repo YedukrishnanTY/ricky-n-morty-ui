@@ -11,5 +11,5 @@ export async function searchCharacter(characterName) {
     const response = await fetch(apiUrl);
     const data = await response.json();
     // console.log(data)
-    return data;
+    return data.results;
 }

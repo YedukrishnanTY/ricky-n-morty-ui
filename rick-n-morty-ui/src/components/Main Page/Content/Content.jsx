@@ -4,10 +4,16 @@ import "./Content.css";
 export default function Content() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
+
+  const [result, setResult] = useState("");
+
+
+
   useEffect(() => {
     async function fetchData() {
       const result = await getList();
       setData(result.results);
+      // console.log(result.results)
     }
 
     fetchData();
@@ -17,8 +23,11 @@ export default function Content() {
     const handleInput = (e) => {
       console.log(e.target.value);
       setSearch(e.target.value);
-      const result = searchCharacter(e.target.value);
+      const result =  searchCharacter(e.target.value);
+
       console.log(result);
+      setResult(result.results)
+
     };
 
 
