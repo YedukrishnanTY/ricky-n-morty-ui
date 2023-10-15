@@ -1,6 +1,6 @@
 import React, { useCallback, useContext, useState } from "react";
 import { AuthContext } from "../../../contexts/loginContext";
-
+import "./Form.css";
 export default function Form() {
   const user = useContext(AuthContext);
 
@@ -15,31 +15,43 @@ export default function Form() {
 
   const handleSubmit = (event) => {
     user.handleLogin(email, password);
-    
   };
 
   return (
     <div className="form">
       <div className="form-card">
         <div className="form-details">
-          <input
-            type="text"
-            placeholder="Name"
-            ref={emailInput}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <input type="submit" onClick={handleSubmit} />
+          <div className="form-content">
+            <label>Name:</label>
+            <input
+              type="text"
+              placeholder="Name"
+              ref={emailInput}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label>Password :</label>
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <input
+              type="submit"
+              onClick={handleSubmit}
+              value="Login"
+              className="login"
+            />
 
-          {user.alertBox}
+            <div className="err">{user.alertBox}</div>
+          </div>
+          
         </div>
+        
       </div>
+      
     </div>
+    
   );
 }

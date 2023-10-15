@@ -24,6 +24,9 @@ export const AuthContextProvider = ({ children }) => {
       console.log("Password length should be atleast 8");
       setAlertBox("Password length should be atleast 8")
     } 
+    else{
+      setAlertBox("Wrong credentials")
+    }
   }
 
   return (

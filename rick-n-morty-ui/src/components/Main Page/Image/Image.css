@@ -1,0 +1,13 @@
+.img-div{
+    display: flex;
+    justify-content: center;
+
+    padding-bottom: 5vh;
+}
+@media screen and (max-width: 897px) {
+    .div-img{
+        display: none;
+      
+    }
+
+}
