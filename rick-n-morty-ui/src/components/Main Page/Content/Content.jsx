@@ -6,7 +6,7 @@ export default function Content() {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [result, setResult] = useState([]);
-  const [button, setButton] = useState(true);
+  const [button, setButton] = useState(Array(data.length).fill(true));
 
   useEffect(() => {
     async function fetchData() {
@@ -39,8 +39,12 @@ export default function Content() {
     console.log(result.results);
     setResult(result.results);
   }
-  function handleButton(){
-    setButton(prev => !prev)
+  const handleButton = (id) => {
+    setButton(prev => {
+      const newButtonStates =[...prev];
+      newButtonStates[id] =!newButtonStates[id];
+      return newButtonStates
+    })
     console.log(button)
   }
 
@@ -67,8 +71,8 @@ export default function Content() {
                       alt={character.name}
                       src={character.image}
                     />
-                    <div>Name : {character.name.substring(0, 22)} </div>
-                    {button  &&
+                    <div>Name : {character.name} </div>
+                    {button[id]  &&
                       <div className="conditional-div">
                         <div>
                           <div> Gender : {character.gender} </div>
@@ -77,8 +81,8 @@ export default function Content() {
                         <div> species : {character.species} </div>{" "}
                       </div>
                     }
-                    {button? <input type="button" onClick={handleButton} value="View Less Details"/> :
-                    <input type="button" onClick={handleButton} value="View More Details"/> }
+                    {button[id]? <input type="button" onClick={()=> handleButton(id)} style={{backgroundColor : "red"}} value="View Less Details"/> :
+                    <input type="button"  onClick={()=> handleButton(id)} value="View More Details"/> }
                   </div>
                 </div>
               ))}
