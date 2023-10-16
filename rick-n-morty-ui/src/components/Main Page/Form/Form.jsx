@@ -43,15 +43,10 @@ export default function Form() {
               value="Login"
               className="login"
             />
-
             <div className="err">{user.alertBox}</div>
           </div>
-          
         </div>
-        
       </div>
-      
     </div>
-    
   );
 }
