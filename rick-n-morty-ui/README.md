@@ -2,7 +2,7 @@
 
 Welcome to the Rick and Morty API Client built using React! This project is a simple web application that allows users to explore information about the characters, locations, and episodes from the popular TV show "Rick and Morty" using the [Rick and Morty API](https://rickandmortyapi.com/).
 
-![Rick and Morty](https://github.com/yourusername/your-repo/blob/main/src/assets/rick_and_morty.png)
+![Rick and Morty](https://github.com/YeduKrishnanTY/your-repo/blob/main/src/assets/rick_and_morty.png)
 
 ## Table of Contents
 - [Features](#features)
