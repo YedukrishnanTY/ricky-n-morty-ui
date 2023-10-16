@@ -79,7 +79,7 @@ If you'd like to contribute to this project, please follow these steps:
 3. Create a new branch for your feature or bug fix.
 4. Make your changes and commit them.
 5. Push the branch to your fork on GitHub.
-6. Create a pull request to the `main` branch of the original repository.
+6. Create a pull request to the `release/v1.0.0` branch of the original repository.
 
 Please make sure your code adheres to the project's coding standards, and be descriptive in your commit messages and pull request.
 
