@@ -1,0 +1,45 @@
+.head{
+    display: flex;
+    width: auto;
+    padding-top: 10px;
+    padding-left: 2vh;
+    background-color: aliceblue;
+    color: black;
+    box-shadow: 0 8px 12px 8px rgba(92, 192, 238, 0.315);
+
+}
+.hello-div{
+    display: flex ;
+    gap: 5vh;
+    
+}
+.logout-div{
+    display: flex;
+    float: right;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+.logout{
+    display: flex;
+    align-items: center;
+}
+.rick-logo{
+    width: 8vh;
+    height: 8vh;
+}
+.h-content{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 897px) {
+    
+        .h-content{
+        display: none;
+      
+    }
+
+}

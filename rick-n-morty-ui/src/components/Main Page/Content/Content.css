@@ -1,35 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,500&display=swap');
 
+
+.search-bar{
+    display: flex;
+    justify-content: center;
+    padding: 5vh;
+}
+.search-bar input[type=text] {
+    width: 40%;
+    padding: 25px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 9px;
+
+}
+.list{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    font-family: "Montserrat";
+    color: #000;
+    
+}
+.details-image{
+    width: 35vh;
+    height: 30vh;
+    display: flex;
+    border-radius: 9px;
+    
+}
 
 .details {
     font-family: "Montserrat";
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    font-size: 20px;
+    color: black;
+
+
+    
 }
 
 .details-card {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 5em;
     font-family: "Montserrat";
-    cursor: pointer;
-    margin: 10vh ;
+    margin: 5vh ;
+    margin-left: 10vh;
+    margin-right: 10vh;
 
 }
-
-.details-card :hover {
-    transform: scale(1.1);
+.condition-div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .details-content {
     display: flex;
-    justify-content: center;
+    
     border-radius: 9px;
-    background-color: aliceblue;
-    padding: 10px;
-    box-shadow: 0 8px 12px 8px rgba(199, 11, 11, 0.137);
-
+    background: linear-gradient(180.3deg, rgb(221, 221, 221) 5.5%, rgb(103, 164, 221) 90.2%);
+    box-shadow: 0 8px 12px 8px rgba(92, 192, 238, 0.315);
+    padding: 12px;
+    cursor: pointer;
 }
 
 .details-content :hover {
@@ -39,13 +75,73 @@
 .details-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 2em;
+    align-items: center;
+    gap: 1em;
+    padding: 12px;
 }
-
-.list{
+ input[type=button] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 9px;
+    font-family: "Montserrat";
+    font-size: 14px;
+    transition: 0.5s;
+    background-color: #0ca6b4;
+    color: aliceblue;
     display: flex;
     justify-content: center;
-    
 }
 
+
+
+
+
+
+
+
+
+
+.silder{
+    display: flex;
+    justify-content: center;
+
+    
+        
+}
+.silder-card{
+    
+    display: flex;
+    background: linear-gradient(99.6deg, rgb(112, 128, 152) 10.6%, rgb(242, 227, 234) 32.9%, rgb(234, 202, 213) 52.7%, rgb(220, 227, 239) 72.8%, rgb(185, 205, 227) 81.1%, rgb(154, 180, 212) 102.4%);
+    color: rgb(0, 0, 0);
+    font-size: 22px;
+    border-radius: 9px;
+    flex-wrap: wrap-reverse;
+    font-weight: 500;
+    
+
+}
+.silder-content{
+    display: flex;
+    padding-top: 8px; padding-bottom:  8px;
+    padding-left: 20px; padding-right : 20px;
+
+    gap:2em;
+}
+.silder-previous{
+    cursor: pointer;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+}
+.silder-next{
+    cursor: pointer;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+}

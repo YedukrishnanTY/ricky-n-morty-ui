@@ -3,7 +3,8 @@ import {  createContext, useState } from "react";
 export const AuthContext = createContext({
   authenticator: false,
   handleLogin: () => {},
-  alertBox : ""
+  alertBox : "",
+  setAuthenticator : ""
 });
 
 export const AuthContextProvider = ({ children }) => {
@@ -23,6 +24,9 @@ export const AuthContextProvider = ({ children }) => {
       console.log("Password length should be atleast 8");
       setAlertBox("Password length should be atleast 8")
     } 
+    else{
+      setAlertBox("Wrong credentials")
+    }
   }
 
   return (
