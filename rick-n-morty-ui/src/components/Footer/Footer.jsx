@@ -19,7 +19,7 @@ export default function Footer() {
          </svg>
        </div>
        <div className="content flex">
-         <p>YeduKrishnanTY@2023 </p>
+         <p style={{color : "black"}}>YeduKrishnanTY@2023 </p>
        </div>
      </div>
    </div>

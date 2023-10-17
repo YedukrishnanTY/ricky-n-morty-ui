@@ -13,6 +13,7 @@ import {
   Card,
   CardContent,
   Typography,
+  Pagination,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 export default function Content() {
@@ -106,7 +107,7 @@ export default function Content() {
 
   return (
     <>
-      <div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <Box
           sx={{
             backgroundColor: "white",
@@ -115,8 +116,8 @@ export default function Content() {
           display="flex"
           justifyContent="center"
           flexDirection="row"
-          padding="1vh 4vh"
-          margin="1vh 6vh"
+          padding="1vh 12vh"
+          margin="4vh 35vh"
         >
           <Grid
             container
@@ -191,27 +192,36 @@ export default function Content() {
             </Grid>
             <Grid>
               <Button
-                variant="outlined"
-                endIcon={<SendIcon />}
+                variant="contained"
                 type="submit"
                 value="Search"
                 onClick={handleInput}
-              />
+              >
+                <SendIcon />
+              </Button>
             </Grid>
           </Grid>
         </Box>
       </div>
 
       <div>
-        <Grid container padding="10vh" gap={6} display="flex" justifyContent="center">
+        <Grid
+          container
+          padding="10vh"
+          gap={6}
+          display="flex"
+          justifyContent="center"
+        >
           {data.map((character, id) => (
-            <Grid lg={2}  margin="4px" >
+            <Grid lg={2} margin="4px">
               <Card
                 key={id}
                 display="flex"
-                style={{ flexWrap: "wrap", gap: "3em" }}
-
-                
+                style={{
+                  background:
+                    "linear-gradient(180.3deg,rgb(221, 221, 221) 5.5%,rgb(103, 164, 221) 90.2%)",
+                  boxShadow: "0 8px 12px 8px rgba(92, 192, 238, 0.315)",
+                }}
               >
                 <img
                   component="img"
@@ -265,6 +275,8 @@ export default function Content() {
           </div>
         </div>
       </div>
+
+      <Pagination count={lastpage} display="flex" justifyContent="center" />
     </>
   );
 }
