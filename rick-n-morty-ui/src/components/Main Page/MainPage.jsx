@@ -16,7 +16,7 @@ export default function MainPage() {
           <Content />
         </>
       ) : (
-        <Content />
+        <Form />
       )}
     </>
   );
