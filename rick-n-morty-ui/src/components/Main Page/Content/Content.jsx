@@ -240,7 +240,6 @@ export default function Content() {
 
         <Pagination
           size="large"
-          color="primary"
           sx={{ display: "flex", justifyContent: "center" , backgroundcolor :"blue"}}
           count={lastpage}
           onChange={(event, page) =>
