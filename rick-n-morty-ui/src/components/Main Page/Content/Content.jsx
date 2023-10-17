@@ -13,7 +13,7 @@ import {
   Card,
   CardContent,
   Typography,
-  Pagination,
+  
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 export default function Content() {
@@ -275,8 +275,6 @@ export default function Content() {
           </div>
         </div>
       </div>
-
-      <Pagination count={lastpage} display="flex" justifyContent="center" />
     </>
   );
 }
