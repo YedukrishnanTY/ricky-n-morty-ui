@@ -55,26 +55,6 @@ export default function Content() {
     fetchData();
   }, [filter]);
 
-  async function HandleNextPage() {
-    if (filter.page < lastpage) {
-      setFilter((previous) => ({
-        ...previous,
-        page: previous.page + 1,
-      }));
-    }
-    console.log(filter.page);
-  }
-
-  async function HandlePreviousPage() {
-    if (filter.page > 1) {
-      setFilter((previous) => ({
-        ...previous,
-        page: previous.page - 1,
-      }));
-    }
-    console.log(filter);
-  }
-
   async function handleInput(e) {
     setFilter((previous) => ({
       ...previous,
