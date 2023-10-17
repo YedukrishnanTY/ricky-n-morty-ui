@@ -19,7 +19,6 @@ export default function Header() {
   const darkTheme = createTheme({
     palette: {
       mode: "dark",
-
     },
   });
   const lightTheme = createTheme({
@@ -62,7 +61,7 @@ export default function Header() {
         <Grid items>
           <a href="/">
             {" "}
-            <img src={ricklogo}  alt="logo" height="50vh" />
+            <img src={ricklogo} alt="logo" height="50vh" />
           </a>
         </Grid>
         <Grid>

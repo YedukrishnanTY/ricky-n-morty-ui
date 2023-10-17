@@ -1,8 +1,8 @@
 import React, { useCallback, useContext, useState } from "react";
 import { AuthContext } from "../../../contexts/loginContext";
 import "./Form.css";
-import { IconButton, Alert, Box, TextField, Typography } from "@mui/material";
-import Fingerprint from "@mui/icons-material/Fingerprint";
+import { Button, Alert, Box, TextField, Typography } from "@mui/material";
+import VpnKeyIcon from "@mui/icons-material/VpnKey";
 
 export default function Form() {
   const user = useContext(AuthContext);
@@ -33,7 +33,13 @@ export default function Form() {
         padding="2% 4%"
         gap={3}
       >
-        <Typography variant="h5" gutterBottom display="flex" justifyContent="center" fontFamily="Montserrat">
+        <Typography
+          variant="h5"
+          gutterBottom
+          display="flex"
+          justifyContent="center"
+          fontFamily="Montserrat"
+        >
           Login
         </Typography>
 
@@ -47,9 +53,7 @@ export default function Form() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           lg={12}
-          sx={{p:1}}
-           
-
+          sx={{ p: 1 }}
         />
 
         <TextField
@@ -61,18 +65,19 @@ export default function Form() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           lg={12}
-          sx={{p:1}}
+          sx={{ p: 1 }}
         />
-        <IconButton
+        <Button
           aria-label="fingerprint"
-          color="secondary"
-          type="submit"
+          variant="text"
           onClick={handleSubmit}
           value="Login"
           className="login"
+          endIcon={<VpnKeyIcon />}
+          size="small"
         >
-          <Fingerprint />
-        </IconButton>
+          Login
+        </Button>
 
         {user.alertBox && (
           <Alert variant="outlined" severity="error">

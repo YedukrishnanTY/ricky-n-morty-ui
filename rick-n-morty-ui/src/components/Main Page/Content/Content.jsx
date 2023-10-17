@@ -13,7 +13,6 @@ import {
   Card,
   CardContent,
   Typography,
-  
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 export default function Content() {

@@ -1,83 +1,79 @@
 .form {
-    display: flex;
-    justify-content: center;
-    font-family: "Montserrat";
-    padding-top: 4vh;
-    color: black;    
+  display: flex;
+  justify-content: center;
+  font-family: "Montserrat";
+  padding-top: 4vh;
+  color: black;
 }
 
-.form-details{
-    display: flex;
+.form-details {
+  display: flex;
 }
 
 .form-card {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 50px;
-    background-color: aliceblue;
-    border-radius: 9px;
-    box-shadow: 0 8px 12px 8px rgba(182, 59, 59, 0.137);
-    padding-left: 10vh;
-    padding-right: 10vh;
-    
-    
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 50px;
+  background-color: aliceblue;
+  border-radius: 9px;
+  box-shadow: 0 8px 12px 8px rgba(182, 59, 59, 0.137);
+  padding-left: 10vh;
+  padding-right: 10vh;
 }
-.form-card input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border-radius: 9px;
+.form-card input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 9px;
 }
-.form-card input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border-radius: 9px;
+.form-card input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 9px;
 }
 .form-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    width: 35vh;
-    justify-content: center;
-    
-    
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 35vh;
+  justify-content: center;
 }
-.form-card input[type=submit] {
-    width: 100%;
-    padding: 12px;
-    border-radius: 9px;
-    font-family: "Montserrat";
-    font-size: 14px;
-    transition: 0.5s;
-    background-color: #0ca6b4;
-    color: aliceblue;
-    display: flex;
-    justify-content: center;
+.form-card input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 9px;
+  font-family: "Montserrat";
+  font-size: 14px;
+  transition: 0.5s;
+  background-color: #0ca6b4;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
 }
-.err{
-    display: flex;
-    justify-content: center;
+.err {
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (max-width: 612px) {
-    .form-card{
-        display: flex;
-        gap:2rem;
-        justify-content: center;
-        margin: 2vh;
-    }
+  .form-card {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: 2vh;
+  }
 
-    input[type=button] {
-        display: flex;
-        justify-content: center;
-        border-radius: 8px;
-        font-family: "Montserrat";   
-    }
-    .form-content {
-        width: auto;
-    }
+  input[type="button"] {
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    font-family: "Montserrat";
+  }
+  .form-content {
+    width: auto;
+  }
 }

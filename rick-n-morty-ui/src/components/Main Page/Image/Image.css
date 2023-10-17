@@ -1,12 +1,9 @@
-.img-div{
-    display: flex;
-    justify-content: center;
-
+.img-div {
+  display: flex;
+  justify-content: center;
 }
 @media screen and (max-width: 897px) {
-    .div-img{
-        display: none;
-      
-    }
-
+  .div-img {
+    display: none;
+  }
 }
