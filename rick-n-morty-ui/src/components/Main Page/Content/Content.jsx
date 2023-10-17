@@ -13,6 +13,7 @@ import {
   Card,
   CardContent,
   Typography,
+  Pagination,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 export default function Content() {
@@ -257,22 +258,19 @@ export default function Content() {
           ))}
         </Grid>
 
-        <div className="silder">
-          <div className="silder-card">
-            <div className="silder-content">
-              <div className="silder-previous" onClick={HandlePreviousPage}>
-                Previous
-              </div>
+        <Pagination
+          size="large"
+          color="primary"
+          sx={{ display: "flex", justifyContent: "center" , backgroundcolor :"blue"}}
+          count={lastpage}
+          onChange={(event, page) =>
+            setFilter((previous) => ({
+              ...previous,
+              page: page,
+            }))
+          }
+        />
 
-              <div className="silder-count">
-                {filter.page} / {lastpage}
-              </div>
-              <div className="silder-next" onClick={HandleNextPage}>
-                Next
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </>
   );
