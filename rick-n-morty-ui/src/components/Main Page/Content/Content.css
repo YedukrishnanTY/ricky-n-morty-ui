@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,500&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,500&display=swap");
 
 .search-bar {
   display: flex;
@@ -193,7 +193,7 @@ input[type="button"] {
     display: flex;
     justify-content: center;
 }
-
+ */
 .MuiPagination-root {
   button {
     color: rgb(99, 96, 255) !important;

@@ -90,7 +90,6 @@ export default function Content() {
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Box
           sx={{
-            backgroundColor: "white",
             borderRadius: "9px",
           }}
           display="flex"

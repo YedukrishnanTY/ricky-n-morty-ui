@@ -24,7 +24,6 @@ export default function Form() {
     <div className="form">
       <Box
         sx={{
-          backgroundColor: "white",
           borderRadius: "9px",
         }}
         display="flex"
@@ -72,7 +71,6 @@ export default function Form() {
           variant="text"
           onClick={handleSubmit}
           value="Login"
-          className="login"
           endIcon={<VpnKeyIcon />}
           size="small"
         >

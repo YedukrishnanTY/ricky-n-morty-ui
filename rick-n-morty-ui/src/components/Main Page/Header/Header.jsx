@@ -1,31 +1,13 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { AuthContext } from "../../../contexts/loginContext";
 import "./Header.css";
 import ricklogo from "./../../../assets/rick.png";
 import { Button, Grid, Typography } from "@mui/material";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import LightModeIcon from "@mui/icons-material/LightMode";
 
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
 
 export default function Header() {
   const Auth = useContext(AuthContext);
-  const [isDark, setIsDark] = useState(true);
-  function handleMode() {
-    setIsDark((prev) => !prev);
-  }
-
-  const darkTheme = createTheme({
-    palette: {
-      mode: "dark",
-    },
-  });
-  const lightTheme = createTheme({
-    palette: {
-      mode: "light",
-    },
-  });
+ 
   console.log(Auth.authenticator);
 
   function HandleLogout() {
@@ -74,23 +56,7 @@ export default function Header() {
           <Typography>Support-us</Typography>
         </Grid>
         <Grid>
-          <Button variant="secondary" onClick={handleMode}>
-            {isDark ? (
-              <ThemeProvider theme={darkTheme}>
-                <CssBaseline />
-                <main>
-                  <DarkModeIcon />
-                </main>
-              </ThemeProvider>
-            ) : (
-              <ThemeProvider theme={lightTheme}>
-                <CssBaseline />
-                <main>
-                  <LightModeIcon />
-                </main>
-              </ThemeProvider>
-            )}
-          </Button>
+
         </Grid>
 
         <Grid style={{ marginLeft: "auto" }}>
