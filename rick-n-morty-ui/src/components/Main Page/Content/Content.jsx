@@ -1,6 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { getList } from "../../../services/apiServices";
 import "./Content.css";
+import {
+  Box,
+  TextField,
+  Select,
+  MenuItem,
+  InputLabel,
+  FormControl,
+  Button,
+  Grid,
+  Card,
+  CardContent,
+  Typography,
+} from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
 export default function Content() {
   const [lastpage, setLastPage] = useState("");
   const [data, setData] = useState([]);
@@ -20,24 +34,21 @@ export default function Content() {
   });
   const [button, setButton] = useState(Array(filter.length).fill(false));
 
-
-
   useEffect(() => {
     async function fetchData() {
-      try{
-      const result = await getList(
-        filter.page,
-        filter.name,
-        filter.status,
-        filter.gender,
-        filter.species
-      );
-      setData(result.results);
-      setLastPage(result.info.pages );
-      }
-      catch(e){
-        console.log(e)
-        setLastPage(1)
+      try {
+        const result = await getList(
+          filter.page,
+          filter.name,
+          filter.status,
+          filter.gender,
+          filter.species
+        );
+        setData(result.results);
+        setLastPage(result.info.pages);
+      } catch (e) {
+        console.log(e);
+        setLastPage(1);
       }
     }
     fetchData();
@@ -73,6 +84,9 @@ export default function Content() {
   }
 
   function handleValues(e) {
+    if (e.target.value === "all") {
+      e.target.value = "";
+    }
     setSearchFilter((previous) => ({
       ...previous,
       [e.target.name]: e.target.value,
@@ -92,86 +106,147 @@ export default function Content() {
 
   return (
     <>
-      <div className="search">
-        <div className="search-card">
-          <div className="search-details">
-            <div className="search-content">
-              <input
+      <div>
+        <Box
+          sx={{
+            backgroundColor: "white",
+            borderRadius: "9px",
+          }}
+          display="flex"
+          justifyContent="center"
+          flexDirection="row"
+          padding="1vh 4vh"
+          margin="1vh 6vh"
+        >
+          <Grid
+            container
+            gap={3}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Grid>
+              <TextField
+                id="outlined-basic"
+                label="Name"
+                variant="outlined"
                 type="text"
-                placeholder="name..."
                 onChange={handleValues}
                 name="name"
               />
-
-              <select name="status" id="status" onChange={handleValues}>
-                <option value="">All</option>
-                <option value="alive">alive</option>
-                <option value="dead">dead</option>
-                <option value="unknown">unknown</option>
-              </select>
-
-              <select name="gender" id="gender" onChange={handleValues}>
-                <option value="">All</option>
-                <option value="female">female</option>
-                <option value="male">male</option>
-                <option value="genderless">genderless</option>
-                <option value="unknown">unknown</option>
-              </select>
-
-              <select name="species" id="species" onChange={handleValues}>
-                <option value="">All</option>
-                <option value="human">human</option>
-                <option value="alien">alien</option>
-              </select>
-
-              <input type="submit" value="Search" onClick={handleInput}></input>
-            </div>
-          </div>
-        </div>
+            </Grid>
+            <Grid>
+              <FormControl>
+                <InputLabel id="demo-simple-select-label">Status</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  label="Status"
+                  name="status"
+                  id="status"
+                  onChange={handleValues}
+                  defaultValue="all"
+                >
+                  <MenuItem value="all">All</MenuItem>
+                  <MenuItem value="alive">alive</MenuItem>
+                  <MenuItem value="dead">dead</MenuItem>
+                  <MenuItem value="unknown">unknown</MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
+            <Grid>
+              <FormControl>
+                <InputLabel id="demo-simple-select-label">Gender</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  label="gender"
+                  name="gender"
+                  id="gender"
+                  onChange={handleValues}
+                  defaultValue="all"
+                >
+                  <MenuItem value="all">All</MenuItem>
+                  <MenuItem value="female">female</MenuItem>
+                  <MenuItem value="male">male</MenuItem>
+                  <MenuItem value="genderless">genderless</MenuItem>
+                  <MenuItem value="unknown">unknown</MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
+            <Grid>
+              <FormControl>
+                <InputLabel id="demo-simple-select-label">Species</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  label="species"
+                  name="species"
+                  id="species"
+                  onChange={handleValues}
+                  defaultValue="all"
+                >
+                  <MenuItem value="all">All</MenuItem>
+                  <MenuItem value="human">human</MenuItem>
+                  <MenuItem value="alien">alien</MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
+            <Grid>
+              <Button
+                variant="outlined"
+                endIcon={<SendIcon />}
+                type="submit"
+                value="Search"
+                onClick={handleInput}
+              />
+            </Grid>
+          </Grid>
+        </Box>
       </div>
-      <div className="content-page">
-        <div>
-          <div className="list">List of Characters</div>
-          <div className="details">
-            <div className="details-card">
-              {(data || []).map((character, id) => (
-                <div key={id} className="details-content">
-                  <div className="details-container">
-                    <img
-                      className="details-image"
-                      alt={character.name}
-                      src={character.image}
-                    />
-                    <div>Name : {character.name} </div>
-                    {button[id] && (
-                      <div className="conditional-div">
-                        <div>
-                          <div> Gender : {character.gender} </div>
-                        </div>
-                        <div>Status : {character.status} </div>
-                        <div> species : {character.species} </div>{" "}
-                      </div>
-                    )}
-                    {button[id] ? (
-                      <input
-                        type="button"
-                        onClick={() => handleButton(id)}
-                        style={{ backgroundColor: "red" }}
-                        value="View Less Details"
-                      />
-                    ) : (
-                      <input
-                        type="button"
-                        onClick={() => handleButton(id)}
-                        value="View More Details"
-                      />
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+
+      <div>
+        <Grid container padding="10vh" gap={6} display="flex" justifyContent="center">
+          {data.map((character, id) => (
+            <Grid lg={2}  margin="4px" >
+              <Card
+                key={id}
+                display="flex"
+                style={{ flexWrap: "wrap", gap: "3em" }}
+
+                
+              >
+                <img
+                  component="img"
+                  alt={character.name}
+                  src={character.image}
+                />
+                <CardContent>
+                  <Typography variant="h5" component="div">
+                    Name: {character.name}
+                  </Typography>
+                  {button[id] && (
+                    <div>
+                      <Typography variant="h6" color="textSecondary">
+                        Gender: {character.gender}
+                      </Typography>
+                      <Typography variant="h6" color="textSecondary">
+                        Status: {character.status}
+                      </Typography>
+                      <Typography variant="h6" color="textSecondary">
+                        Species: {character.species}
+                      </Typography>
+                    </div>
+                  )}
+                  <Button
+                    variant="contained"
+                    onClick={() => handleButton(id)}
+                    style={{ backgroundColor: button[id] ? "red" : "green" }}
+                  >
+                    {button[id] ? "View Less Details" : "View More Details"}
+                  </Button>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
 
         <div className="silder">
           <div className="silder-card">
